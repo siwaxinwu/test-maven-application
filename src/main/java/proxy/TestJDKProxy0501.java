@@ -18,11 +18,12 @@ public class TestJDKProxy0501 implements InvocationHandler {
         if ("printB".equals(method.getName())) {
             System.out.println("printB is working");
         }
-        return proxy;
+        Object result = method.invoke(target, args);
+        return result;
     }
 
     public static void main(String[] args) {
-        Demo demo = new Demo();
+        DemoInterface demo = new Demo();
         DemoInterface o =(DemoInterface) Proxy.newProxyInstance(
                 demo.getClass().getClassLoader(),
                 demo.getClass().getInterfaces(),
@@ -30,16 +31,4 @@ public class TestJDKProxy0501 implements InvocationHandler {
         o.printB();
     }
 }
-interface DemoInterface{
-    public void printA();
-    public void printB();
-}
-class Demo implements DemoInterface{
-    public void printA(){
-        System.out.println("print A");
-    }
-    public void printB(){
-        System.out.println("print B");
-    }
 
-}

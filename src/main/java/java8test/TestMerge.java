@@ -1,7 +1,6 @@
 package java8test;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -70,7 +69,7 @@ public class TestMerge {
         return studentScoreList;
     }
 
-    public static void main(String[] args) throws JsonProcessingException {
+    /*public static void main(String[] args) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         List<StudentScore> studentScoreList = buildATestList();
 
@@ -86,5 +85,5 @@ public class TestMerge {
 
         System.out.println(objectMapper.writeValueAsString(studentScoreMap));
 
-    }
+    }*/
 }

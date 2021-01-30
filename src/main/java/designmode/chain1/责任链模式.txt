@@ -1,0 +1,131 @@
+学习文档：《Java中23种经典设计模式.pdf》
+
+
+1.3.1 责任链模式 *********************************
+
+	使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合
+关系。将这些对象连成一条链， 这条链传递该请求，直到有一个对象处理它为止。
+
+	这一模式的想法是，给多个对象处理一个请求的机会，从而解耦发送者和接
+受者.
+
+一、适用性
+1.有多个的对象可以处理一个请求，哪个对象处理该请求运行时刻自动确定。
+2.你在不明确指定接收者的情况下，向多个对象中的一个提交一个请求。
+3.可处理一个请求的对象集合应被动态指定。
+
+二、参与者
+1.Handler
+	定义一个处理请求的接口。 （可选）实现后继链。
+
+2.ConcreteHandler
+	处理它所负责的请求。
+	可访问它的后继者。
+	如果可处理该请求，就处理；否则将该请求转发给它的后继者。
+
+3.Client
+	向链上的具体处理者(ConcreteHandler)对象提交请求。
+
+三、类图
+四、例子
+1.Handler
+public interface RequestHandle {
+    void handleRequest(Request request);
+}
+
+2.ConcreteHandler
+//人事部门处理
+public class HRRequestHandle implements RequestHandle {
+	public void handleRequest(Request request) {
+		if (request instanceof DimissionRequest) {
+			System.out.println("要离职, 人事审批!");
+		}
+		System.out.println("请求完成");
+	}
+}
+
+//项目经理处理
+public class PMRequestHandle implements RequestHandle {
+    RequestHandle rh;
+    public PMRequestHandle(RequestHandle rh) {
+        this.rh = rh;
+    }
+    public void handleRequest(Request request) {
+        if (request instanceof AddMoneyRequest) {
+            System.out.println("要加薪, 项目经理审批!");
+        } else {
+            rh.handleRequest(request);
+        }
+    }
+}
+
+//项目组成处理
+public class TLRequestHandle implements RequestHandle {
+    RequestHandle rh;
+    public TLRequestHandle(RequestHandle rh) {
+        this.rh = rh;
+    }
+    public void handleRequest(Request request) {
+        if (request instanceof LeaveRequest) {
+            System.out.println("要请假, 项目组长审批!");
+        } else {
+            rh.handleRequest(request);
+        }
+    }
+}
+
+// request
+public class Request {
+
+}
+
+//离职
+public class DimissionRequest extends Request {
+
+}
+
+//加薪
+public class AddMoneyRequest extends Request {
+
+}
+
+//请假
+public class LeaveRequest extends Request {
+
+}
+
+3.Client
+public class Test {
+	public static void main(String[] args) {
+		RequestHandle hr = new HRRequestHandle();
+		RequestHandle pm = new PMRequestHandle(hr);
+		RequestHandle tl = new TLRequestHandle(pm);
+
+		// team leader处理离职请求
+		Request request = new DimissionRequest();
+		tl.handleRequest(request);
+
+		System.out.println("===========");
+
+		// team leader处理加薪请求
+		request = new AddMoneyRequest();
+		tl.handleRequest(request);
+
+		System.out.println("========");
+
+		// 项目经理上理辞职请求
+		request = new DimissionRequest();
+		pm.handleRequest(request);
+	}
+}
+
+4.result
+
+要离职, 人事审批!
+请求完成
+===========
+要加薪, 项目经理审批!
+========
+要离职, 人事审批!
+请求完成
+

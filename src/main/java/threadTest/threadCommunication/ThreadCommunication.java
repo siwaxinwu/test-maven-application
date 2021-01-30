@@ -136,7 +136,7 @@ public class ThreadCommunication {
 
 
     public static void main(String[] args) {
-        //demo1();
+        //chain1();
         //demo2();
         //demo3();
         //demo4();

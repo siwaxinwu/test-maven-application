@@ -1,5 +1,12 @@
 package container;
 
+
+import jdk.management.resource.internal.inst.SocketOutputStreamRMHooks;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * description：
  * author：dingyawu
@@ -24,5 +31,20 @@ public class TestString {
         System.out.printf("上面价格的指数和浮点数结果的长度较短的是：%g %n", 50*0.85);
         System.out.printf("上面的折扣是%d%% %n", 85);
         System.out.printf("字母A的散列码是：%h %n", 'A');
+    }
+
+    @Test
+    public void test11(){
+        List<Integer> result = null;
+        try {
+            for (Integer integer: result){
+                System.out.println("come in");
+            }
+
+        }catch (Exception e){
+            System.out.println("skip");
+        }
+
+
     }
 }

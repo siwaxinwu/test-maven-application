@@ -3,33 +3,30 @@ package proxy;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
+import sun.reflect.generics.scope.MethodScope;
 
 import java.lang.reflect.Method;
+
 
 public class TestCglib implements MethodInterceptor {
 
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-        System.out.println("Cglib is working");
+        if ("printA".equals(method.getName())){
+            System.out.println("printA is working");
+        }
+        if ("printB".equals(method.getName())){
+            System.out.println("printB is working");
+        }
         Object result = methodProxy.invokeSuper(o, objects);
         return result;
     }
 
     public static void main(String[] args) {
-        Car car = new Car();
         Enhancer enhancer = new Enhancer();
-        //设置父类为实例类
-        enhancer.setSuperclass(car.getClass());
-        //回调方法
+        enhancer.setSuperclass(Demo.class);
         enhancer.setCallback(new TestCglib());
-        Car carProxy = (Car)enhancer.create();
-        car.run();
-
-
-    }
-    static class Car {
-        public void run(){
-            System.out.println("the car is running");
-        }
+        Demo demo = (Demo)enhancer.create();
+        demo.printA();
     }
 }
