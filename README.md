@@ -6,5 +6,6 @@
 #container.InsertTypeEnum            ---------枚举类有两个值的测试类
 #designmode.methodTemplate1210       ---------在controller当中应用模板方法
 #threadPool.InheritableThreadLocalTest -------InheritableThreadLocal的使用
-
-
+#utils.RoleEnum ------------------------------使用枚举来简化if else
+#utils.Calculator   --------------------------基于枚举的策略模式
+#JDK方法遇到的一些坑 ---------------------------JDKBugTest          
