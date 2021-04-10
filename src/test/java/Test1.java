@@ -1,6 +1,11 @@
+import entity.Student;
 import org.junit.Test;
 import utils.Calculator;
 import utils.RoleEnum;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 /**
  * @author dingyawu
@@ -23,5 +28,19 @@ public class Test1 {
     // 打印 8.0
     System.out.println(Calculator.DIVISION.execute(4.0, 2.0));
     // 打印 2.0
+  }
+
+  private static void serialize() {
+    try {
+      Student student = new Student();
+      FileOutputStream fileOut = new FileOutputStream("/tmp/student.ser");
+      ObjectOutputStream out = new ObjectOutputStream(fileOut);
+      out.writeObject(student);
+      out.close();
+      fileOut.close();
+      System.out.printf("Serialized data is saved in /tmp/student.ser");
+    } catch (IOException i) {
+      i.printStackTrace();
+    }
   }
 }
