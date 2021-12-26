@@ -22,6 +22,7 @@ public class Testdebug {
 
 
     private static boolean isInterested(int i) {
+        System.out.println("sth un add");
         return i % 2 == 0;
     }
 

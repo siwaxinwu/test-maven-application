@@ -17,3 +17,10 @@
 |threadTest.OrderThread1|演示三个线程依次执行|
 |atomic.TestRateLimit|Guava RateLimiter实现接口API限流|
 |annotationAndReflection.FlightInfo|注解 + 反射来实现简化冗余代码|  
+|IO.ClientTest|序列化和反序列化对象|  
+|rmi.RmiClient|rmi远程调用demo|
+|leetcode.LRUCache|手写LRU算法的demo|
+
+
+
+
