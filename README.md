@@ -20,7 +20,7 @@
 |IO.ClientTest|序列化和反序列化对象|  
 |rmi.RmiClient|rmi远程调用demo|
 |leetcode.LRUCache|手写LRU算法的demo|
-
+|MapStructTest|mapStruct的用法|
 
 
 
