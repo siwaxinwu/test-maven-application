@@ -161,7 +161,7 @@ public class ConfigMainEnum {
      * @param <T>
      * @return
      */
-    public static <T, P> T chanageExecute(Integer optionType, OptionFactory optionFactory, P p) {
+    /*public static <T, P> T chanageExecute(Integer optionType, OptionFactory optionFactory, P p) {
       if (optionType == null) {
         return null;
       }
@@ -171,7 +171,7 @@ public class ConfigMainEnum {
         }
       }
       return null;
-    }
+    }*/
   }
 
   @Getter

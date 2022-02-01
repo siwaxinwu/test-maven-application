@@ -51,12 +51,12 @@ public class FlightInfo {
     }
 
     public static void main(String[] args) {
-        FlightInfo flightInfo = new FlightInfo();
+        /*FlightInfo flightInfo = new FlightInfo();
         flightInfo.setOrg("beijing");
         flightInfo.setDst("shanghai");
         flightInfo.setFlightDate("2021-10-01");
         flightInfo.setFlightNo("CA9988");
         flightInfo.setPassengerNum(1);
-        System.out.println(createUrl(flightInfo));
+        System.out.println(createUrl(flightInfo));*/
     }
 }

@@ -15,7 +15,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public enum InsertTypeEnum {
-    IN(1,  "进港"),
+    /*IN(1,  "进港"),
     OUT(0, "出港");
 
     private Integer code;
@@ -31,7 +31,7 @@ public enum InsertTypeEnum {
             }
         }
         return null;
-    }
+    }*/
 
 }
 

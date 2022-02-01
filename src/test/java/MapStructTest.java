@@ -1,9 +1,12 @@
+import com.github.kevinsawicki.http.HttpRequest;
 import container.testmapstruct.*;
 import org.junit.Test;
 
 import javax.print.Doc;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @description:
@@ -11,16 +14,16 @@ import java.util.List;
  * @create: 2021/12/31 09:25
  */
 public class MapStructTest {
-    @Test
+    /*@Test
     public void studentPo2Vo() {
         StudentPO studentPO = StudentPO.builder().id(10).name("test")
                 .age(24).className("教室名").build();
         StudentVO studentVO = StudentMapper.INSTANCE.po2Vo(studentPO);
         System.out.println(studentVO);
-    }
+    }*/
 
 
-    @Test
+    /*@Test
     public void poList2VoList() {
         List<StudentPO> studentPOList = new ArrayList<>();
         for (int i = 1; i <= 2; i++) {
@@ -29,9 +32,9 @@ public class MapStructTest {
         }
         List<StudentVO> studentVOList = StudentMapper.INSTANCE.poList2VoList(studentPOList);
         System.out.println(studentVOList);
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void test_1() {
 
         Patient patient = new Patient();
@@ -57,9 +60,9 @@ public class MapStructTest {
         System.out.println(doctor);
         DoctorDto dto = DoctorMapper.INSTANCE.toDto(doctor, education);
         System.out.println(dto);
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void test_2() {
         Doctor doctor = new Doctor();
         doctor.setSpecialty("target");
@@ -67,9 +70,7 @@ public class MapStructTest {
         dto.setSpecialization("roy");
         DoctorMapper.INSTANCE.updateModel(dto, doctor);
         System.out.println(doctor);
-    }
-
-
+    }*/
 
 
 }

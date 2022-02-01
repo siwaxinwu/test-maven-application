@@ -12,7 +12,7 @@ import java.util.List;
  * @author: Ding Yawu
  * @create: 2021/12/31 09:24
  */
-@Mapper
+//@Mapper
 public interface StudentMapper {
 
     StudentMapper INSTANCE = Mappers.getMapper(StudentMapper.class);

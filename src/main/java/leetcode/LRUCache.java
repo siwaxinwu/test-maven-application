@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class LRUCache {
 
-    private Entry head;
+    /*private Entry head;
     private Entry tail;
     private int size;
     private int capacity;
@@ -27,12 +27,12 @@ public class LRUCache {
         initLikedList();
     }
 
-    /**
+    *//**
      * 把节点加入到头结点，如果容量已满，删除掉尾结点
      *
      * @param key 关键
      * @param value 价值
-     */
+     *//*
     public void put(int key, int value){
         Entry node = cache.get(key);
         if (Objects.nonNull(node)){
@@ -84,13 +84,12 @@ public class LRUCache {
 
         node.pre = head;
         head.next = node;
-
     }
 
-    /**
+    *//**
      * 初始化链表
      *
-     */
+     *//*
     private void initLikedList() {
         head = new Entry();
         tail = new Entry();
@@ -107,7 +106,6 @@ public class LRUCache {
         public int value;
 
         public Entry(){
-
         }
 
         public Entry (int key, int value){
@@ -123,5 +121,5 @@ public class LRUCache {
     System.out.println(lruCache.get(1));
     lruCache.put(3, 3);
     System.out.println(lruCache.get(2));
-  }
+  }*/
 }

@@ -19,7 +19,7 @@ public class InheritableThreadLocalTest {
   public static ThreadLocal<Stu> threadLocal = new MytransmitableTheadLocal<>();
   public static ExecutorService executorService = Executors.newFixedThreadPool(1);
 
-  public static void main(String[] args) throws InterruptedException {
+  /*public static void main(String[] args) throws InterruptedException {
     threadLocal.set(new Stu("roy", 25));
     System.out.println(Thread.currentThread().getName() + threadLocal.get());
     executorService.submit(
@@ -36,10 +36,10 @@ public class InheritableThreadLocalTest {
         () -> {
           System.out.println("子线程读取本地变量：" + threadLocal.get());
         });
-    /*new Thread(
+    *//*new Thread(
         () -> {
          System.out.println(Thread.currentThread().getName() + threadLocal.get());
         })
-    .start();*/
-  }
+    .start();*//*
+  }*/
 }
