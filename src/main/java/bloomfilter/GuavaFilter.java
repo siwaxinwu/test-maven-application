@@ -10,8 +10,8 @@ import com.google.common.hash.Funnels;
  */
 public class GuavaFilter {
   public static void main(String[] args) {
-      // 创建布隆过滤器对象，最多元素数量为500，期望误报概率为0.01
-      BloomFilter<Integer> filter = BloomFilter.create(Funnels.integerFunnel(), 500, 0.01);
+      // 创建布隆过滤器对象，最多元素数量为50000，期望误报概率为0.01
+      BloomFilter<Integer> filter = BloomFilter.create(Funnels.integerFunnel(), 50000, 0.01);
       // 判断指定元素是否存在
       // false
       System.out.println(filter.mightContain(1));

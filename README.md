@@ -22,6 +22,9 @@
 |leetcode.LRUCache|手写LRU算法的demo|
 |MapStructTest|mapStruct的用法|
 |bloomfilter|guava布隆过滤器的使用，自定义布隆过滤器|
-
+|extfilter.Test|手写责任链|
+|leetcode.balance.WeightRoundRobin|平滑加权轮询算法的demo|
+|testBlockingQueue.custommq.ConsumeClient|自定义消息队列|
+|leetcode.balance.BinarySearchTest|二分查找的写法|
 
 
