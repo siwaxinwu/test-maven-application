@@ -26,5 +26,6 @@
 |leetcode.balance.WeightRoundRobin|平滑加权轮询算法的demo|
 |testBlockingQueue.custommq.ConsumeClient|自定义消息队列|
 |leetcode.balance.BinarySearchTest|二分查找的写法|
-
-
+|bloomfilter.BitSetTest|BitSet的基本使用|
+|leetcode.LeetCode191|求取一个数的汉明重量|
+|leetcode.Leetcode231|输入一个数看他是不是2的N次方|
